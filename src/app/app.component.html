@@ -1,59 +1,55 @@
 <div class="container">
-<div class="jumbotron">
-<h1 style="text-align: center;">
+  <div class="jumbotron">
+    <h1 style="text-align: center;">
+      Fuckery {{ title }}!
+    </h1>
+  </div>
+  <button (click)="addTap()">Add a new tap</button>
 
-  Fuckery {{ title }}!
-</h1>
-</div>
-<button (click)="addTap()">Add a new tap</button>
+  <div *ngIf="newTap">
+    <h3>Add a Tap</h3>
+    <label>Enter Tap Title:</label>
+    <input [(ngModel)]="newTap.title">
+    <label>Enter Tap Brand:</label>
+    <input [(ngModel)]="newTap.brand">  <label>Enter Tap Price:</label>
+    <input [(ngModel)]="newTap.price">  <label>Enter Tap Content:</label>
+    <input [(ngModel)]="newTap.content">
+    <label>Enter Tap Flavor:</label>
+    <input [(ngModel)]="newTap.flavor">
+    <button (click)="doneAdding()">Done</button>
+    <br>
+  </div>
 
-<div *ngIf="newTap">
-<h3>Add a Tap</h3>
-<label>Enter Tap Title:</label>
-<input [(ngModel)]="newTap.title">
-<label>Enter Tap Brand:</label>
-<input [(ngModel)]="newTap.brand">  <label>Enter Tap Price:</label>
-<input [(ngModel)]="newTap.price">  <label>Enter Tap Content:</label>
-<input [(ngModel)]="newTap.content">
-<label>Enter Tap Flavor:</label>
-<input [(ngModel)]="newTap.flavor">
-<button (click)="doneAdding()">Done</button>
-<br>
-</div>
-
-<div *ngFor="let currentTap of taps" class="keg">
-  <div class="title"> {{currentTap.title}}</div>
+  <div *ngFor="let currentTap of taps" class="keg">
+    <div class="title"> {{currentTap.title}}</div>
     <p> Brand: {{currentTap.brand}}</p>
-  <div [class]="priceColor(currentTap)">Price: {{currentTap.price}}$ </div>
+    <div [class]="priceColor(currentTap)">Price: {{currentTap.price}}$ </div>
     <p>Alcohol content: {{currentTap.content}}%</p>
     <p>Flavor: {{currentTap.flavor}}</p>
-  <div [class]="pintColor(currentTap)">Pints: {{currentTap.pint}}</div>
-  <hr>
-  <button (click)="editTap(currentTap)" class="btn btn-primary">Edit</button>
-  <button (click)="sellTap(currentTap)"  class="btn btn-primary">Sell</button>
-  <button (click)="sellGrowler(currentTap)"  class="btn btn-primary">Sell Growler</button>
-  <button (click)="sellBigGrowler(currentTap)"  class="btn btn-primary">Sell Big Growler</button>
-  <button (click)="fillTap(currentTap)"  class="btn btn-primary">Fill UP</button>
-  <button (click)="delete(currentTap)"  class="btn btn-primary">Delete</button>
-  <button (click)="sale(currentTap)"  class="btn btn-primary" >Sale</button>
+    <div [class]="pintColor(currentTap)">Pints: {{currentTap.pint}}</div>
+    <hr>
+    <button (click)="editTap(currentTap)" class="btn btn-primary">Edit</button>
+    <button (click)="sellTap(currentTap)"  class="btn btn-primary">Sell a pint</button>
+    <button (click)="sellGrowler(currentTap)"  class="btn btn-primary">Sell a Growler</button>
+    <button (click)="sellBigGrowler(currentTap)"  class="btn btn-primary">Sell Big Growler</button>
+    <button (click)="fillTap(currentTap)"  class="btn btn-primary">Fill UP</button>
+    <button (click)="delete(currentTap)"  class="btn btn-primary">Delete</button>
+    <button (click)="sale(currentTap)"  class="btn btn-primary" >Sale</button>
+  </div>
+  <div *ngIf="selectedTap" class="edit">
+    <h3>Edit Tap</h3>
+    <label>Enter Tap Title:</label>
+    <input [(ngModel)]="selectedTap.title">
+    <label>Enter Tap Brand:</label>
+    <input [(ngModel)]="selectedTap.brand">
+    <label>Enter Tap Price:</label>
+    <input [(ngModel)]="selectedTap.price">
+    <label>Enter Tap Content:</label>
+    <input [(ngModel)]="selectedTap.content">
+    <label>Enter Tap Flavor:</label>
+    <input [(ngModel)]="selectedTap.flavor">
+    <button (click)="finishEdit()">Done</button>
+    <br>
+  </div>
 </div>
-
-
-
-
-
-<div *ngIf="selectedTap">
-<h3>Edit Tap</h3>
-<label>Enter Tap Title:</label>
-<input [(ngModel)]="selectedTap.title">
-<label>Enter Tap Brand:</label>
-<input [(ngModel)]="selectedTap.brand">  <label>Enter Tap Price:</label>
-<input [(ngModel)]="selectedTap.price">  <label>Enter Tap Content:</label>
-<input [(ngModel)]="selectedTap.content">
-<label>Enter Tap Flavor:</label>
-<input [(ngModel)]="selectedTap.flavor">
-<button (click)="finishEdit()">Done</button>
-<br>
-</div>
-</div>
-<br><br>
+<br><br><br><br><br><br><br> 

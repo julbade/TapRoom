@@ -17,7 +17,7 @@ export class AppComponent {
 
 selectedTap = null;
 newTap = null;
-toggle = true;
+
 
 
 editTap(clickedTap) {
@@ -75,13 +75,4 @@ pintColor(currentTap){
         return "bg-info";
       }
     }
-  // alcoholContent(currentTap){
-  //     if (currentTap.content >= 20){
-  //       return Strong;
-  //     } else if (currentTap.content < 20 && currentTap.content > 10) {
-  //       return  Medium;
-  //     } else {
-  //       return WEAK;
-  //     }
-  //   }
 }

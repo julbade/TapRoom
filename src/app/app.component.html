@@ -6,7 +6,7 @@
   </div>
   <button (click)="addTap()">Add a new tap</button>
 
-  <div *ngIf="newTap">
+  <div *ngIf="newTap" class="edit">
     <h3>Add a Tap</h3>
     <label>Enter Tap Title:</label>
     <input [(ngModel)]="newTap.title">
@@ -52,4 +52,4 @@
     <br>
   </div>
 </div>
-<br><br><br><br><br><br><br> 
+<br><br><br><br><br><br><br>

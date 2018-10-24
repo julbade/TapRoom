@@ -5,10 +5,6 @@
   Fuckery {{ title }}!
 </h1>
 </div>
-
-<div *ngFor="let currentTap of taps" class="keg"><div class="title"> {{currentTap.title}}</div><p> Brand: {{currentTap.brand}}</p><div [class]="priceColor(currentTap)">Price: {{currentTap.price}}$ </div><p>Alcohol content: {{currentTap.content}}%</p><p>Flavor: {{currentTap.flavor}}</p><div [class]="pintColor(currentTap)">Pints: {{currentTap.pint}}</div><hr><button (click)="editTap(currentTap)" class="btn btn-primary">Edit</button> <button (click)="sellTap(currentTap)"  class="btn btn-primary">Sell</button> <button (click)="sellGrowler(currentTap)"  class="btn btn-primary">Sell Growler</button> <button (click)="sellBigGrowler(currentTap)"  class="btn btn-primary">Sell Big Growler</button></div>
-
-
 <button (click)="addTap()">Add a new tap</button>
 
 <div *ngIf="newTap">
@@ -24,6 +20,26 @@
 <button (click)="doneAdding()">Done</button>
 <br>
 </div>
+
+<div *ngFor="let currentTap of taps" class="keg">
+  <div class="title"> {{currentTap.title}}</div>
+    <p> Brand: {{currentTap.brand}}</p>
+  <div [class]="priceColor(currentTap)">Price: {{currentTap.price}}$ </div>
+    <p>Alcohol content: {{currentTap.content}}%</p>
+    <p>Flavor: {{currentTap.flavor}}</p>
+  <div [class]="pintColor(currentTap)">Pints: {{currentTap.pint}}</div>
+  <hr>
+  <button (click)="editTap(currentTap)" class="btn btn-primary">Edit</button>
+  <button (click)="sellTap(currentTap)"  class="btn btn-primary">Sell</button>
+  <button (click)="sellGrowler(currentTap)"  class="btn btn-primary">Sell Growler</button>
+  <button (click)="sellBigGrowler(currentTap)"  class="btn btn-primary">Sell Big Growler</button>
+  <button (click)="fillTap(currentTap)"  class="btn btn-primary">Fill UP</button>
+  <button (click)="delete(currentTap)"  class="btn btn-primary">Delete</button>
+  <button (click)="sale(currentTap)"  class="btn btn-primary" >Sale</button>
+</div>
+
+
+
 
 
 <div *ngIf="selectedTap">

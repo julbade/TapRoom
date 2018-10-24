@@ -17,6 +17,8 @@ export class AppComponent {
 
 selectedTap = null;
 newTap = null;
+toggle = true;
+
 
 editTap(clickedTap) {
   this.selectedTap = clickedTap;
@@ -29,21 +31,31 @@ addTap() {
   let addTap = new Tap();
   this.newTap = addTap;
   this.taps.push(this.newTap);
+}
+sale(currentTap){
+  currentTap.price *= .5;
+  }
 
+delete(currentTap) {
+  let index = this.taps.indexOf(currentTap);
+  this.taps.splice(index, 1);
 }
 
 doneAdding(){
   this.newTap = 0;
+}
+fillTap(currentTap){
+  currentTap.pint = 124;
 }
 
 sellTap(currentTap){
   currentTap.pint--;
 }
 sellGrowler(currentTap){
-  currentTap.pint-2;
+  currentTap.pint-=2;
 }
 sellBigGrowler(currentTap){
-  currentTap.pint -5;
+  currentTap.pint-=5;
 }
 pintColor(currentTap){
     if (currentTap.pint <= 10){

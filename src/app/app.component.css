@@ -19,3 +19,10 @@ h1 {
 button {
   font-size: 15px;
 }
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
+}

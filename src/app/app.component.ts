@@ -10,8 +10,9 @@ export class AppComponent {
   title = 'Tap Room';
   pint = 124;
   taps: Tap[] = [
-  new Tap('KillerVodka', 'Proper 12', 5, 40, 'Strawberry'),
-  new Tap('DrinkAndFight', 'Chans', 1, 80, 'Alcohol')
+  new Tap('KillerVodka', 'Proper 12', 15, 40, 'Strawberry'),
+  new Tap('DrinkAndFight', 'Chans', 25, 80, 'Alcohol'),
+  new Tap('AjFucker', 'AJ', 10, 90, 'Alcohol')
 ];
 
 selectedTap = null;
@@ -25,16 +26,24 @@ finishEdit() {
 
 }
 addTap() {
-  this.newTap = new Tap("this.newTap.title", this.newTap.brand, this.newTap.price, this.newTap.content, this.newTap.flavor);
+  let addTap = new Tap();
+  this.newTap = addTap;
   this.taps.push(this.newTap);
+
 }
 
-doneAdding(newTap){
-  this.newTap = null;
+doneAdding(){
+  this.newTap = 0;
 }
 
 sellTap(currentTap){
   currentTap.pint--;
+}
+sellGrowler(currentTap){
+  currentTap.pint-2;
+}
+sellBigGrowler(currentTap){
+  currentTap.pint -5;
 }
 pintColor(currentTap){
     if (currentTap.pint <= 10){
@@ -45,5 +54,22 @@ pintColor(currentTap){
       return "bg-success";
     }
   }
-
+  priceColor(currentTap){
+      if (currentTap.price >= 20){
+        return "bg-danger";
+      } else if (currentTap.price < 20 && currentTap.price > 10) {
+        return  "bg-warning";
+      } else {
+        return "bg-info";
+      }
+    }
+  // alcoholContent(currentTap){
+  //     if (currentTap.content >= 20){
+  //       return Strong;
+  //     } else if (currentTap.content < 20 && currentTap.content > 10) {
+  //       return  Medium;
+  //     } else {
+  //       return WEAK;
+  //     }
+  //   }
 }

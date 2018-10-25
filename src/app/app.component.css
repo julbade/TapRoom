@@ -24,3 +24,30 @@ button {
   font-size: 20px;
   font-family: sans-serif;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #999966  ;
+  font-family: 'Kavoon';font-size: 22px;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  width: 15%;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #999966 ;
+  color: white;
+}
+

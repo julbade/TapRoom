@@ -34,6 +34,7 @@ export class AppComponent {
   }
   sale(currentTap){
     currentTap.price *= .5;
+    currentTap.price.fontcolor('red')
   }
 
   delete(currentTap) {
@@ -42,7 +43,7 @@ export class AppComponent {
   }
 
   doneAdding(){
-    this.newTap = 0;
+    this.newTap = null;
   }
   fillTap(currentTap){
     currentTap.pint = 124;

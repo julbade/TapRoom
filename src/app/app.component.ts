@@ -33,8 +33,8 @@ export class AppComponent {
     this.taps.push(this.newTap);
   }
   sale(currentTap){
-    currentTap.price *= .5;
-   
+    currentTap.price *= .8;
+    
   }
 
   delete(currentTap) {

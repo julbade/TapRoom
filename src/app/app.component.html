@@ -3,6 +3,7 @@
   <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
   <a href="#menu"> <i class="glyphicon glyphicon-th"></i> Menu</a>
 </div>
+<br>
 <div class="container">
   <div class="jumbotron">
     <div class="glitch" data-text="Fuckery Tap Room">
@@ -44,6 +45,13 @@
 
   <div *ngFor="let currentTap of taps" class="keg">
     <div class="title"> {{currentTap.title}}</div>
+    Rating:
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+      <hr>
     <p> Brand: {{currentTap.brand}}</p>
     <div [class]="priceColor(currentTap)">Price: {{currentTap.price}}$ </div>
     <p>Alcohol content: {{currentTap.content}}%</p>
@@ -58,6 +66,10 @@
     <button (click)="delete(currentTap)"  class="btn btn-primary">Delete</button>
     <hr>
     <br>
+  <label (click)="sale(currentTap)" class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label> Sale
   <div *ngIf="selectedTap" class="edit">
     <h3>Edit Tap</h3>
     <label>Enter Tap Title:</label>

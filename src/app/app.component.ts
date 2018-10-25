@@ -10,9 +10,9 @@ export class AppComponent {
   title = 'Tap Room';
   pint = 124;
   taps: Tap[] = [
-    new Tap('KillerVodka', 'Proper 12', 15, 40, 'Strawberry'),
-    new Tap('DrinkAndFight', 'Chans', 25, 80, 'Alcohol'),
-    new Tap('AjFucker', 'AJ', 10, 90, 'Alcohol')
+    new Tap('Killer Vodka', 'Proper 12', 15, 40, 'Strawberry'),
+    new Tap('Drink And Fight', 'Chans', 25, 80, 'Alcohol'),
+    new Tap('Aj Fucker', 'AJ', 10, 90, 'Alcohol')
   ];
   
   selectedTap = null;
@@ -34,7 +34,7 @@ export class AppComponent {
   }
   sale(currentTap){
     currentTap.price *= .5;
-    currentTap.price.fontcolor('red')
+   
   }
 
   delete(currentTap) {

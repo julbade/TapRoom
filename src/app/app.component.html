@@ -1,13 +1,30 @@
 <div class="topnav">
   <a class="active" href="/"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="#contact"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-  <a href="#menu"> <i class="glyphicon glyphicon-th"></i>Menu</a>
+  <a href="#menu"> <i class="glyphicon glyphicon-th"></i> Menu</a>
 </div>
 <div class="container">
   <div class="jumbotron">
-    <h1 style="text-align: center;">
-      Fuckery {{ title }}!
-    </h1>
+    <div class="glitch" data-text="Fuckery Tap Room">
+
+      <span class="glitch__color glitch__color--red">Fuckery Tap Room</span>
+      <span class="glitch__color glitch__color--blue">Fuckery Tap Room</span>
+      <span class="glitch__color glitch__color--green">Fuckery Tap Room</span>
+      <span class="glitch__main">Fuckery Tap Room</span>
+      <span class="glitch__line glitch__line--first"></span>
+      <span class="glitch__line glitch__line--second"></span>
+  </div>
+  </div>
+  <div class="grid">
+    <div class="item" style="background-image: url(https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2018/beer.jpg)"></div>
+    
+    <div class="item" style="background-image: url(https://www.revlocal.com/f/249071)"></div>
+    
+    <div class="item" style="background-image: url(https://media1.tenor.com/images/a0cb1a76a1e504d6dfbe239743ccc727/tenor.gif?itemid=4968995)"></div>
+    
+    <div class="item" style="background-image: url(https://www.tracyjonglawfirm.com/blog/wp-content/uploads/2017/08/a452b7a5-5791-4ded-8c99-19c47192a187-large16x9_Liquor_Logo-986x500.jpg)"></div>
+    
+    <div class="item" style="background-image: url(https://images.designtrends.com/wp-content/uploads/2016/08/19172201/f214.jpg)"></div>
   </div>
   <button (click)="addTap()">Add a new tap</button>
 
@@ -39,8 +56,8 @@
     <button (click)="sellBigGrowler(currentTap)"  class="btn btn-primary">Sell Big Growler</button>
     <button (click)="fillTap(currentTap)"  class="btn btn-primary">Fill UP</button>
     <button (click)="delete(currentTap)"  class="btn btn-primary">Delete</button>
-    <button (click)="sale(currentTap)"  class="btn btn-primary " >Sale</button>
-  </div>
+    <hr>
+    <br>
   <div *ngIf="selectedTap" class="edit">
     <h3>Edit Tap</h3>
     <label>Enter Tap Title:</label>

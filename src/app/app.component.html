@@ -27,22 +27,7 @@
     
     <div class="item" style="background-image: url(https://images.designtrends.com/wp-content/uploads/2016/08/19172201/f214.jpg)"></div>
   </div>
-  <button (click)="addTap()">Add a new tap</button>
-
-  <div *ngIf="newTap" class="edit">
-    <h3>Add a Tap</h3>
-    <label>Enter Tap Title:</label>
-    <input [(ngModel)]="newTap.title">
-    <label>Enter Tap Brand:</label>
-    <input [(ngModel)]="newTap.brand">  <label>Enter Tap Price:</label>
-    <input [(ngModel)]="newTap.price">  <label>Enter Tap Content:</label>
-    <input [(ngModel)]="newTap.content">
-    <label>Enter Tap Flavor:</label>
-    <input [(ngModel)]="newTap.flavor">
-    <button (click)="doneAdding()">Done</button>
-    <br>
-  </div>
-
+  
   <div *ngFor="let currentTap of taps" class="keg">
     <div class="title"> {{currentTap.title}}</div>
     Rating:
@@ -82,7 +67,24 @@
     <input [(ngModel)]="selectedTap.content">
     <label>Enter Tap Flavor:</label>
     <input [(ngModel)]="selectedTap.flavor">
-    <button (click)="finishEdit()">Done</button>
+    <button (click)="finishEdit()" class="btn btn-success">Done</button>
+    <br>
+  </div>
+</div>
+<br>
+<button (click)="addTap()" class="btn btn-success">Add a new tap</button>
+
+  <div *ngIf="newTap" class="edit">
+    <h3>Add a Tap</h3>
+    <label>Enter Tap Title:</label>
+    <input [(ngModel)]="newTap.title">
+    <label>Enter Tap Brand:</label>
+    <input [(ngModel)]="newTap.brand">  <label>Enter Tap Price:</label>
+    <input [(ngModel)]="newTap.price">  <label>Enter Tap Content:</label>
+    <input [(ngModel)]="newTap.content">
+    <label>Enter Tap Flavor:</label>
+    <input [(ngModel)]="newTap.flavor">
+    <button (click)="doneAdding()" class="btn btn-success">Done</button>
     <br>
   </div>
 </div>
